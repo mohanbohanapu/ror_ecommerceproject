@@ -1,0 +1,2 @@
+module ReadymadesHelper
+end

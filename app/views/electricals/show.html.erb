@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Productid:</strong>
+  <%= @electrical.productid %>
+</p>
+
+<p>
+  <strong>Productname:</strong>
+  <%= @electrical.productname %>
+</p>
+
+<p>
+  <strong>Productdiscription:</strong>
+  <%= @electrical.productdiscription %>
+</p>
+<p>
+  <strong>ProductImage:</strong>
+<%= image_tag @electrical.avatar.url(:thumb) %>
+<%= link_to 'Edit', edit_electrical_path(@electrical) %> |
+<%= link_to 'Back', electricals_path %>

@@ -1,0 +1,151 @@
+<style>
+.navbar-default .navbar-brand {
+color: #777777;
+padding-top: 15px;
+}
+</style>
+
+<div id="wrapper">
+         
+       <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <div class="ecomm" style = "top: 25px;">
+      <%= link_to "Ecommerce", root_path, :class=>"navbar-brand"%>
+    </div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+       
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to "ALLPRODUCTS", welcome_index_path  %></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <%= form_tag allproducts_path, :method => 'get', :id => "products_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <% end %>
+      </form>
+      <ul class="nav navbar-nav navbar-left">
+
+             <li class="dropdown">
+                            <ul class="nav pull-right">
+                                    <li class="dropdown" id="menuLogin" style = "top: 130%;">
+                                             <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin" style = "top: 5px;">Login</a>
+                                                    <div class="dropdown-menu" style="padding: 34px;margin-top: 18px;">
+    <%= simple_form_for(User.new, url: session_path(User.new)) do |f| %>
+    <div class="form-inputs">
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, required: false %>
+    <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+
+    <div class="form-actions">
+    <%= f.button :submit, "Sign in" %>
+    </div>
+    <% end %>
+
+
+
+                     </li>
+
+              <%#= link_to "LOGIN", new_user_session_path %></ul>
+                    
+                </li>
+              </ul>
+               
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">youraccount<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">add</a></li>
+            <li><a href="#">add</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+          
+        </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">yourcard<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">add</a></li>
+                      <li><a href="#">add</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                    
+                  </li>
+
+                   
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+        
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+
+
+
+
+

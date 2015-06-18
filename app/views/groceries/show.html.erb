@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Productid:</strong>
+  <%= @grocery.productid %>
+</p>
+
+<p>
+  <strong>Productname:</strong>
+  <%= @grocery.productname %>
+</p>
+
+<p>
+  <strong>Productdiscription:</strong>
+  <%= @grocery.productdiscription %>
+</p>
+<p><%= image_tag @grocery.avatar.url(:thumb) %></p>
+
+<%= link_to 'Edit', edit_grocery_path(@grocery) %> |
+<%= link_to 'Back', groceries_path %>

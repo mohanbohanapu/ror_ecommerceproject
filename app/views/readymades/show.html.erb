@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Productid:</strong>
+  <%= @readymade.productid %>
+</p>
+
+<p>
+  <strong>Productname:</strong>
+  <%= @readymade.productname %>
+</p>
+
+<p>
+  <strong>Productdiscription:</strong>
+  <%= @readymade.productdiscription %>
+</p>
+<p>
+  <strong>Productimage:</strong>
+  <%=  image_tag @readymade.avatar.url(:thumb) %>
+</p>
+
+
+<%= link_to 'Edit', edit_readymade_path(@readymade) %> |
+<%= link_to 'Back', readymades_path %>

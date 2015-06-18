@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Readymades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Productid</th>
+      <th>Productname</th>
+      <th>Productdiscription</th>
+      <th>ProductImage<th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @readymades.each do |readymade| %>
+      <tr>
+        <td><%= readymade.productid %></td>
+        <td><%= readymade.productname %></td>
+        <td><%= readymade.productdiscription %></td>
+        <td> <%=  image_tag readymade.avatar.url(:thumb) %></td>
+        <td><%= link_to 'Show', readymade %></td>
+        <td><%= link_to 'Edit', edit_readymade_path(readymade) %></td>
+        <td><%= link_to 'Destroy', readymade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Readymade', new_readymade_path %>

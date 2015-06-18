@@ -1,0 +1,79 @@
+
+
+
+
+
+<% @product = Product.all %>
+
+    <div class="container">
+      <div class="row" style="color:blue">
+        <div class="col-lg-4">
+				<% @product.each do |f| %>
+					<% if f.productid == 3 %>
+								<%= image_tag (f.avatar.url(:thumb) )%></br>
+								<% price = 300 %>
+
+					     <span> ProductPrice :<%= price %></span>
+					       <p>CashBack :10%<p>
+					       		<% cost=price/100 %>
+					       		<% dis=cost*10 %>
+					       		<% selling =price-dis %>
+
+					       	<span>cost:<%= selling  %>
+					       		
+					       		<%= link_to "AddCard", "" %>
+					       	
+					     <% end %>
+		</div>
+		<div class="col-lg-4">
+					     <% if f.productid == 1002 %>
+								<%= image_tag (f.avatar.url(:thumb) )%></br>
+								<% price = 300 %>
+
+					     <span> ProductPrice :<%= price %></span>
+					       <p>CashBack :20%<p>
+					       		<% cost=price/100 %>
+					       		<% dis=cost*20 %>
+					       		<% selling =price-dis %>
+
+					       	<span>cost:<%= selling  %>
+					       		<%= link_to "AddCard", "" %>
+					     <% end %>
+
+
+
+
+
+
+
+					    
+
+
+
+
+	      </div>
+	      <div class="col-lg-4" >
+					     <% if f.productid == 1002 %>
+								<%= image_tag (f.avatar.url(:thumb) )%></br>
+								<% price = 300 %>
+
+					     <span> ProductPrice :<%= price %></span>
+					       <p>CashBack :20%<p>
+					       		<% cost=price/100 %>
+					       		<% dis=cost*40 %>
+					       		<% selling =price-dis %>
+
+					       	<span>cost:<%= selling  %>
+					       		<%= link_to "AddCard", "" %>
+					     <% end %>
+					      <% end %>
+					 </div>
+
+
+
+
+
+
+
+	   </div>
+	</div>

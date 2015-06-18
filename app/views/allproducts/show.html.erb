@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Productid:</strong>
+  <%= @allproduct.productid %>
+</p>
+
+<p>
+  <strong>Productname:</strong>
+  <%= @allproduct.productname %>
+</p>
+
+<p>
+  <strong>Productdiscription:</strong>
+  <%= @allproduct.productdiscription %>
+</p>
+<%= image_tag @allproduct.avatar.url(:thumb) %>
+
+<%= link_to 'Edit', edit_allproduct_path(@allproduct) %> |
+<%= link_to 'Back', allproducts_path %>

@@ -1,0 +1,175 @@
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1 align="center"><%#=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+<div class="nav navbar-nav navbar-right">
+<%= form_tag  welcome_index_path, :method => 'get', :id => "products_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <div id="products"><%= render 'products' %></div>
+<% end %>
+</div>
+
+
+<span>ALLPRODUCTS</span>
+        
+
+  </h1>
+</div>
+<div class="rowmainbg" style="color:#BD3F3F">
+
+           <div class="container">
+      <div class="row">
+        <div class="col-lg-2">
+          <% @product = Product.all %>
+          <span>RICEproducts</span>
+                    <% @product.each do |product| %>
+                        <ul class="items">
+                              <div class="img-thumbnail" >
+                
+              <%= image_tag (product.avatar.url(:thumb) )%></br>
+              <span>products</span>
+                              
+              <li><span>productsid:</span><%= product.productid %></li>
+              <li><span>productsname:</span><%= product.productname %></li>
+              <li><span>productsdis:</span><%= product.productdiscription %></li>
+              <%= link_to "ShopNow", welcome_productprice_path  %>
+
+
+
+
+            </div>
+            </ul>
+            <% end %>
+          </div>
+
+
+
+          <%@grocery =Grocery.all  %>
+
+
+
+          <div class="col-lg-2" >
+            <span align="center">GROCERY</span>
+                    <% @grocery.each do |grocery| %>
+                        <ul class="items">
+                              <div class="img-thumbnail">
+                
+              <%= image_tag grocery.avatar.url(:thumb) %></br>
+              <span>groceries</span>
+                              
+              <li><span>productsid:</span><%= grocery.productid %></li>
+              <li><span>productsname:</span><%= grocery.productname %></li>
+              <li><span>productsdis:</span><%= grocery.productdiscription %></li>
+              <%= link_to "ShopNow", welcome_groceries_path  %>
+              </div>
+            </ul>
+            <% end %>
+          </div>
+
+
+          <%@readymade =Readymade.all  %>
+
+
+
+          <div class="col-lg-2" >
+            <span align="center">READYMADES</span>
+                    <% @readymade.each do |grocery| %>
+                        <ul class="items">
+                              <div class="img-thumbnail">
+                
+              <%= image_tag grocery.avatar.url(:thumb) %></br>
+              <span>readymades</span>
+                             
+              <li><span>productsid:</span><%= grocery.productid %></li>
+              <li><span>productsname:</span><%= grocery.productname %></li>
+              <li><span>productsdis:</span><%= grocery.productdiscription %></li>
+              <%= link_to "ShopNow", welcome_readymade_path  %>
+              </div>
+            </ul>
+            <% end %>
+          </div>
+
+
+           <%@electrical =Electrical.all  %>
+
+
+
+          <div class="col-lg-2" >
+            <span align="center">ELECTRICAL</span>
+                    <% @electrical.each do |grocery| %>
+                        <ul class="items">
+                              <div class="img-thumbnail">
+                
+              <%= image_tag grocery.avatar.url(:thumb) %></br>
+              <span>eletrical</span>
+                             
+              <li><span>productsid:</span><%= grocery.productid %></li>
+              <li><span>productsname:</span><%= grocery.productname %></li>
+              <li><span>productsdis:</span><%= grocery.productdiscription %></li>
+              <%= link_to "ShopNow", welcome_electrical_path  %>
+              </div>
+            </ul>
+            <% end %>
+          </div>
+
+
+
+            <!--  <%#= Grocery.all.collect {|s| [s.productid,s.productname,s.productdiscription,image_tag grocery.avatar.url(:thumb)]} %> -->
+          
+          <%#= @groceries.productname %> 
+
+          <!-- <div class="col-lg-3">
+                    <%# @grocery.each do |grocery| %>
+                        <ul class="items">
+                              <div class="img-thumbnail">
+                
+              <%#= image_tag grocery.avatar.url(:thumb) %></br>
+              <span>groceries</span>
+                              </div>
+              <li><span>productsid:</span><%#= grocery.productid %></li>
+              <li><span>productsname:</span><%#= grocery.productname %></li>
+              <li><span>productsdis:</span><%#= grocery.productdiscription %></li>
+            </ul>
+            <%# end %>
+          </div> -->
+         <!--  <div class="col-lg-3">
+                    <%# @product.each do |product| %>
+                        <ul class="items">
+                              <div class="img-thumbnail">
+                
+              <%#= image_tag (product.avatar.url(:thumb) )%></br>
+              <span>products</span>
+                              </div>
+              <li><span>productsid:</span><%#= product.productid %></li>
+              <li><span>productsname:</span><%#= product.productname %></li>
+              <li><span>productsdis:</span><%#= product.productdiscription %></li>
+            </ul>
+            <%# end %>
+          </div> -->
+          <!-- <div class="col-lg-3">
+                    <#% @product.each do |product| %>
+                        <ul class="items">
+                              <div class="img-thumbnail">
+                
+              <%#= image_tag (product.avatar.url(:thumb) )%></br>
+              <span>products</span>
+                              </div>
+              <li><span>productsid:</span><%#= product.productid %></li>
+              <li><span>productsname:</span><%#= product.productname %></li>
+              <li><span>productsdis:</span><%#= product.productdiscription %></li>
+            </ul>
+            <%# end %>
+          </div> -->
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>

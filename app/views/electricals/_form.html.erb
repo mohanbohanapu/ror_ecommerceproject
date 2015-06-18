@@ -1,0 +1,14 @@
+<%= simple_form_for(@electrical) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :productid %>
+    <%= f.input :productname %>
+    <%= f.input :productdiscription %>
+    <%= f.input :avatar %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

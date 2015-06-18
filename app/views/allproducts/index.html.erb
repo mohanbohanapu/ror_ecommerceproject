@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Allproducts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Productid</th>
+      <th>Productname</th>
+      <th>Productdiscription</th>
+      <th>ProductImage<th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @allproducts.each do |allproduct| %>
+      <tr>
+        <td><%= allproduct.productid %></td>
+        <td><%= allproduct.productname %></td>
+        <td><%= allproduct.productdiscription %></td>
+        <td><%= image_tag allproduct.avatar.url(:thumb) %></td>
+        <td><%= link_to 'Show', allproduct %></td>
+        <td><%= link_to 'Edit', edit_allproduct_path(allproduct) %></td>
+
+        <td><%= link_to 'Destroy', allproduct, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Allproduct', new_allproduct_path %>

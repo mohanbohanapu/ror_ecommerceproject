@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Electricals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Productid</th>
+      <th>Productname</th>
+      <th>Productdiscription</th>
+      <th>ProductImage</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @electricals.each do |electrical| %>
+      <tr>
+        <td><%= electrical.productid %></td>
+        <td><%= electrical.productname %></td>
+        <td><%= electrical.productdiscription %></td>
+        <td><%= image_tag electrical.avatar.url(:thumb) %></td>
+
+        <td><%= link_to 'Show', electrical %></td>
+        <td><%= link_to 'Edit', edit_electrical_path(electrical) %></td>
+        <td><%= link_to 'Destroy', electrical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Electrical', new_electrical_path %>
